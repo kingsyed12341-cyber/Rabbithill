@@ -33,27 +33,34 @@ window.login = async function () {
     password
   })
 
-  if (error) {
-    alert(error.message)
-  } else {
-    document.getElementById("user").innerText =
-      "Logged in: " + data.user.email
-  }
+ if (error) {
+  alert(error.message)
+} else {
+  document.getElementById("user").innerText =
+    "Logged in: " + data.user.email
+
+  document.getElementById("logoutBtn").style.display = "block"
+}
 }
 
 // 👀 CHECK USER
 async function checkUser() {
   const { data } = await supabase.auth.getUser()
 
-  if (data.user) {
-    document.getElementById("user").innerText =
-      "Logged in: " + data.user.email
-  }
+ if (data.user) {
+  document.getElementById("user").innerText =
+    "Logged in: " + data.user.email
+
+  document.getElementById("logoutBtn").style.display = "block"
+}
 }
 
 checkUser()
 window.logout = async function () {
   await supabase.auth.signOut()
+
   document.getElementById("user").innerText = ""
+  document.getElementById("logoutBtn").style.display = "none"
+
   alert("Logged Out Successfully")
 }
