@@ -1,65 +1,71 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login System</title>
+<title>RabbitHill Login</title>
 
-  <style>
-    body{
-      margin:0;
-      height:100vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      background:#f2f2f2;
-      font-family:Arial,sans-serif;
-    }
+<style>
+body{
+  margin:0;
+  height:100vh;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  background:#000;
+  font-family:Arial,sans-serif;
+}
 
-    .container{
-      background:#fff;
-      padding:30px;
-      border-radius:10px;
-      box-shadow:0 0 10px rgba(0,0,0,0.1);
-      text-align:center;
-      width:320px;
-    }
+.container{
+  width:350px;
+  background:#fff;
+  padding:30px;
+  border-radius:15px;
+  text-align:center;
+}
 
-    input{
-      width:90%;
-      padding:10px;
-      margin:5px 0;
-      border:1px solid #ccc;
-      border-radius:5px;
-    }
+input{
+  width:100%;
+  padding:12px;
+  margin:8px 0;
+  box-sizing:border-box;
+}
 
-    button{
-      padding:10px 15px;
-      margin:5px;
-      cursor:pointer;
-    }
+button{
+  width:100%;
+  padding:12px;
+  margin-top:10px;
+  border:none;
+  background:#000;
+  color:#fff;
+  cursor:pointer;
+}
 
-    #user{
-      font-size:16px;
-      margin-top:15px;
-    }
-  </style>
+h1{
+  margin-bottom:5px;
+}
+
+p{
+  color:gray;
+}
+</style>
 </head>
+
 <body>
 
-  <div class="container">
-    <h1>Login System 🔐</h1>
+<div class="container">
+  <h1>RabbitHill</h1>
+  <p>Premium Fashion</p>
 
-    <input id="email" type="email" placeholder="Email"><br>
-    <input id="password" type="password" placeholder="Password"><br><br>
+  <input id="email" type="email" placeholder="Email Address">
+  <input id="password" type="password" placeholder="Password">
 
-    <button onclick="signup()">Sign Up</button>
-    <button onclick="login()">Login</button>
+  <button onclick="login()">Login</button>
+  <button onclick="signup()">Create Account</button>
+  <button onclick="logout()">Logout</button>
 
-    <h2 id="user"></h2>
-  </div>
+  <h3 id="user"></h3>
+</div>
 
-  <script type="module" src="script.js"></script>
+<script type="module" src="script.js"></script>
 
 </body>
 </html>
