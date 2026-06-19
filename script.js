@@ -52,3 +52,8 @@ async function checkUser() {
 }
 
 checkUser()
+window.logout = async function () {
+  await supabase.auth.signOut()
+  document.getElementById("user").innerText = ""
+  alert("Logged Out Successfully")
+}
